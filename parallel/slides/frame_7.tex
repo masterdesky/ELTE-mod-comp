@@ -1,0 +1,30 @@
+%----------------------------------------------------------------------------------------
+%	SLIDE 7.
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Race condition}
+
+\begin{block}{Parallelisation in practice}
+	Several tools now make programming parallel code much easier:
+	\begin{itemize}
+		\item Python: \texttt{threading}, \texttt{multiprocessing} etc.
+		\item C++17: Standard libraries
+		\item C/C++/Fortran: \texttt{OpenMP}, \texttt{CUDA}, etc.
+	\end{itemize}
+\end{block}
+
+\uncover<2->{
+\begin{alertblock}{Issues that needs to be addressed}
+	\begin{itemize}
+		\item There would be plenty without the tools mentioned above, but there's still many more...
+		\item Probably the most important one is \q{race condition}
+		\begin{itemize}
+			\item Two threads want to access the same memory space at the same time
+			\item A typical case of the dreaded \q{undefined behaviour}
+			\item A critical bug that can completely mess up the behaviour of any running process
+		\end{itemize}
+	\end{itemize}
+\end{alertblock}
+}
+
+\end{frame}

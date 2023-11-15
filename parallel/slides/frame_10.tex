@@ -1,0 +1,61 @@
+%----------------------------------------------------------------------------------------
+%	SLIDE 10.
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Amdahl's law}
+
+\onslide<1->{
+\begin{exampleblock}{Motivation}
+	\textbf{How much time can be saved by parallelisation in real cases?}
+\end{exampleblock}
+}
+
+\only<2-3>{
+\begin{itemize}
+	\item<2-3> The runtime of a program can be expressed as follows:
+	\begin{block}{}
+		\begin{equation*}
+			T = T * S + T * P
+		\end{equation*}
+	\end{block}
+	where $S + P = 1$ and which are usually the ratio of the number of parts of an algorithm that can be run only in a serial manner (S) and the number of parts that can be parallelized (P).
+	\item<3> If the parallelizable part (P) is divided into several (N) threads, the runtime of the program is reduced:
+	\begin{block}{}
+		\begin{equation*}
+			T_{\mathrm{new}}
+			=
+			T * S + T * \frac{P}{N}
+		\end{equation*}
+	\end{block}
+\end{itemize}
+}
+
+\onslide<4-5>{
+\begin{itemize}
+	\item<4-5> The speedup (Q) now can be expressed as:
+	\begin{block}{}
+		\begin{equation*}
+			Q \left( N \right)
+			=
+			\frac{T}{T_{\mathrm{new}}}
+			=
+			\frac{\cancel{T}}{\cancel{T} * S + \cancel{T} * \frac{P}{N}}
+			=
+			\frac{1}{S + \frac{P}{N}}
+		\end{equation*}
+	\end{block}
+	\item<5> After some simplification, we get back the usual form of Amdahl's law:
+	\begin{block}{}
+		\begin{equation*}
+			Q \left( S, N \right)
+			=
+			\frac{1}{S + \frac{P}{N}}
+			=
+			\frac{1}{S + \frac{1-S}{N}},
+		\end{equation*}
+	\end{block}
+	which specifies that the speedup depends solely on the proportion of parts to be run in series and the number of threads.
+\end{itemize}
+}
+
+\end{frame}
