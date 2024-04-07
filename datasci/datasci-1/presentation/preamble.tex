@@ -1,0 +1,47 @@
+\usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Tabular
+\usepackage{array, multirow}
+\usepackage{float}
+
+
+%----------------------------------------------------------------------------------------
+%	MATH PACKAGES
+%----------------------------------------------------------------------------------------
+
+% Banish \phi from this realm
+\renewcommand{\phi}{\varphi}
+
+\usepackage{amsmath, amssymb, mathrsfs}
+\usepackage{mathtools}
+
+%----------------------------------------------------------------------------------------
+%	DEFINING NEW FUNCTIONS
+%----------------------------------------------------------------------------------------
+
+% --------- MATH MODE ---------
+% Equation numbering per section
+\numberwithin{equation}{section}
+
+% \cdot instead of asterisk (*) symbol
+\mathcode`\*="8000
+{\catcode`\*\active\gdef*{\cdot}}
+
+% --------- OTHER ---------
+
+% Comment block
+\newcommand{\comment}[1]{}
+
+% Quotes
+\usepackage[autostyle=false]{csquotes}
+\newcommand{\q}[1]{„#1''} % Redefine quotations
+
+% Lists
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+\setlist{nosep} % or \setlist{noitemsep} to leave space around whole list
