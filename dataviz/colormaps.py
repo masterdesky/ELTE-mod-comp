@@ -31,10 +31,10 @@ def puc_lightness():
       nsubplots = int(np.ceil(len(cmap_list) / dsub))
 
       # squeeze=False to handle similarly the case of a single subplot
-      fig, axs = plt.subplots(nrows=1, ncols=1, figsize=(18,5),
+      fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(18,5),
                               facecolor='0.95', squeeze=False)
 
-      for i, ax in enumerate(axs.flat):
+      for i, ax in enumerate(axes.flat):
 
           locs = []  # locations for text labels
 
@@ -61,7 +61,7 @@ def puc_lightness():
           # Set up the axis limits:
           #   * the 1st subplot is used as a reference for the x-axis limits
           #   * lightness values goes from 0 to 100 (y-axis limits)
-          ax.set_xlim(axs[0, 0].get_xlim())
+          ax.set_xlim(axes[0, 0].get_xlim())
           ax.set_ylim(0.0, 100.0)
 
           # Set up labels for colormaps

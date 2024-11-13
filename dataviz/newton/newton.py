@@ -44,9 +44,9 @@ def demo_fzprime(z):
 ##########################################################################
 
 def get_tangent_line(P, x):
-  m = P.fprime(x)
-  b = P.f(x) - m*x
-  return m, b
+    m = P.fprime(x)
+    b = P.f(x) - m*x
+    return m, b
 
 
 
@@ -57,10 +57,9 @@ def get_tangent_line(P, x):
 ##########################################################################
 
 def get_starting_grid(N, grid_lim_x, grid_lim_y):
-
-  X = np.meshgrid(np.linspace(*grid_lim_x, N), np.linspace(*grid_lim_y, N))
-  X = X[0].flatten() + X[1].flatten()*1j
-  return X
+    X = np.meshgrid(np.linspace(*grid_lim_x, N), np.linspace(*grid_lim_y, N))
+    X = X[0].flatten() + X[1].flatten()*1j
+    return X
 
 
 
