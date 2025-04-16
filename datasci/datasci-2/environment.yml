@@ -1,0 +1,21 @@
+name: datasci
+channels:
+    - conda-forge
+    - defaults
+dependencies:
+    - python=3.11
+    - pip
+    - build
+    - jupyterlab
+    - requests
+    - tqdm
+    - numpy
+    - pandas
+    - matplotlib
+    - seaborn
+    - scikit-learn
+    - scikit-image
+    - astropy
+    - astroquery
+    - folium
+    - geopy
